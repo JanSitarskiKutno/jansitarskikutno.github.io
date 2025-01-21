@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>JS - Kalendarz</title>
+        <link rel="icon" href="../resources/favicon.png">
+
+        <script>
+            const days = [
+                "Poniedziałek",
+                "Wtorek",
+                "Środa",
+                "Czwartek",
+                "Piątek",
+                "Sobota",
+                "Niedziela"
+            ]
+
+            const is_year = (x) => {
+                return ((x % 4 == 0) && ((x % 100 != 0) || (x % 400 == 0)));
+            } 
+
+            const run_calendar = (x) => {
+                let date = new Date();
+                let year = date.getYear();
+
+                if (year < 1000) {
+                    year = 2000 + year - 100;
+                }
+
+                let month = date.getMonth() + 1;
+                let week_day = date.getDay();
+                let month_day = date.getDate();
+                let temp_date = new Date(year, month - 1, 1);
+                let first_month = temp_date.getDay();
+
+                if (week_day == 0) {
+                    week_day = 7;
+                }
+
+                if (first_month == 0) {
+                    first_month = 7;
+                }
+
+                switch (month) {
+                case 1: 
+                    month_name = "Styczeń";
+                    month_days = 31;
+                    break;
+                    case 2: 
+                    month_name = "Luty";
+                    month_days = is_year(year) ? 29 : 28;
+                    break;
+                    case 3: 
+                    month_name = "Marzec";
+                    month_days = 31;
+                    break;
+                    case 4: 
+                    month_name = "Kwiecień";
+                    month_days = 30;
+                    break;
+                    case 5: 
+                    month_name = "Maj";
+                    month_days = 31;
+                    break;
+                    case 6: 
+                    month_name = "Czerwiec";
+                    month_days = 30;
+                    break;
+                    case 7: 
+                    month_name = "Lipiec";
+                    month_days = 31;
+                    break;
+                    case 8: 
+                    month_name = "Sierpień";
+                    month_days = 31;
+                    break;
+                    case 9: 
+                    month_name = "Wrzesień";
+                    month_days = 30;
+                    break;
+                    case 10: 
+                    month_name = "Październik";
+                    month_days = 31;
+                    break;
+                    case 11: 
+                    month_name = "Listopad";
+                    month_days = 30;
+                    break;
+                    case 12: 
+                    month_name = "Grudzień";
+                    month_days = 31;
+                    break;
+                }
+
+                let nwm = "";
+                nwm += "<table border='1'><tr>";
+                nwm += "<td class='month_name' colspan='7'>";
+                nwm += month_name + " " + year;
+                nwm += "</td></tr>";
+                nwm += "<tr class='day_name'>";
+
+                for (let i  = 0; i < days.length; i++) {
+                    nwm += ("<td>" + days[i] + "</td>");
+                }
+
+                nwm += "</tr><tr>";
+
+                for (let j = 0; j < month_days + first_month - 1; j++) {
+                    if (j < first_month - 1) {
+                        nwm += "<td class='empty'></td>";
+                        continue;
+                    }
+                    
+                    let day_class = "normal";
+
+                    if (j % 7 == 0) {
+                        nwm += "</tr><tr>";
+                    }
+                    
+                    if ((j + 2) % 7 == 0 || (j + 1) % 7 == 0) {
+                        day_class = "weekend";
+                    }
+
+                    if (j - first_month + 2 == month_day) {
+                        day_class = "today";
+                    }
+
+                    nwm += "<td class='" + day_class + "'>";
+                    nwm += j - first_month + 2;
+                    nwm += "</td>";
+                }
+
+                nwm += "</tr></table>";
+                
+                if (document.getElementById(x)) {
+                    document.getElementById(x).innerHTML = nwm;
+                }
+            }
+        </script>
+
+        <link rel="stylesheet" href="../style.css">
+    </head>
+
+    <body>
+        <div id="calendar">
+
+        </div>
+
+        <div class="links">
+			<a href="../index.html"><span class="link">Strona Główna</span></a>
+		</div>
+
+        <div id="cookie">
+			<div style="padding:10px; margin-left:15px; margin-right:15px; font-size:14px; font-weight:normal;">
+				<span id="cookie_noti">Strona wykorzystuje pliki cookies do prawidłowego działania</span><br><br>
+				<a id="okbutton" href="javascript:create_cookie('cookie', 1, 7);">Zgadzam się na ciasteczka</a><div id="jwc_hr2" style="height: 10px; display: block;"></div>
+			</div>
+		</div>
+
+		<script src="../cookies.js"></script>
+
+        <script>
+            run_calendar("calendar");
+        </script>
+    </body>
+</html>

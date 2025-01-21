@@ -20,19 +20,19 @@ body {
     left: 50%;
     transform: translate(-50%, -40%);
     animation: 1s fade-in;
+}
 
-    & > .name {
-        color: var(--main-accent);
-        font-weight: 500;
-        font-size: 30pt;
-        text-shadow: 0px 0px 3px var(--main-accent);
-    }
+.header > .name {
+    color: var(--main-accent);
+    font-weight: 500;
+    font-size: 30pt;
+    text-shadow: 0px 0px 3px var(--main-accent);
+}
 
-    & > .bio {
-        color: var(--sec-accent);
-        font-weight: 400;
-        font-size: 16pt;
-    }
+.header > .bio {
+    color: var(--sec-accent);
+    font-weight: 400;
+    font-size: 16pt;
 }
 
 .link-o {
@@ -42,10 +42,10 @@ body {
     transition: 0.5s !important;
     text-shadow: 0px 0px 3px var(--main-accent);
     animation: 1.5s fade-in;
-    
-    &:hover {
-        text-shadow: 0px 0px 10px var(--main-accent);
-    }
+}
+
+.link-o:hover {
+    text-shadow: 0px 0px 10px var(--main-accent);
 }
 
 a {
@@ -59,10 +59,10 @@ a {
     transition: 0.5s !important;
     animation: 1.5s fade-in;
     margin: 10px;
+}
 
-    &:hover {
-        text-shadow: 0px 0px 10px var(--main-accent);
-    }
+.link-s:hover {
+    text-shadow: 0px 0px 10px var(--main-accent);
 }
 
 .links {
@@ -72,19 +72,20 @@ a {
     transform: translate(-50%, 0%);
     vertical-align: bottom;
     animation: 1.5s fade-in;
-    
-    & > .link, a {
-        text-decoration: none;
-        color: var(--main-accent);
-        font-size: 16pt;
-        transition: 0.5s !important;
-        margin: 10px;
-        
-        &:hover {
-            text-shadow: 0px 0px 3px var(--main-accent);
-        }
-    }
 }
+
+.links > .link, a {
+    text-decoration: none;
+    color: var(--main-accent);
+    font-size: 16pt;
+    transition: 0.5s !important;
+    margin: 10px;
+}
+
+.links > .link:hover, a:hover {
+    text-shadow: 0px 0px 3px var(--main-accent);
+}
+
 
 @keyframes fade-in {
     from {
@@ -132,16 +133,83 @@ a {
     font-size: 16pt;
     animation: 1.5s fade-in;
     margin: 10px;
-    
-    & > a {
-        text-decoration: none;
-        color: var(--main-accent);
-        font-size: 16pt;
-        transition: 0.5s !important;
-        margin: 10px;
-        
-        &:hover {
-            text-shadow: 0px 0px 3px var(--main-accent);
-        }
-    }
+}
+
+#project > a {
+    text-decoration: none;
+    color: var(--main-accent);
+    font-size: 16pt;
+    transition: 0.5s !important;
+    margin: 10px;
+}
+
+#project > a:hover {
+    text-shadow: 0px 0px 3px var(--main-accent);
+}
+
+input {
+    border: none;
+    border-bottom: 2px solid var(--main-accent);
+    background-color: #00000000;
+    color: var(--main-accent);
+    transition: 0.5s !important;
+}
+
+input:focus {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid var(--sec-accent);
+    transition: 0.5s !important;
+}
+
+input[type=button] {
+    border: 2px solid var(--sec-accent);
+    background-color: var(--main-accent);
+    color: var(--main-bg);
+}
+
+table {
+    border: 0;
+    background-color: #1f1f1f;
+    color: aliceblue;
+}
+
+.month_name {
+    background-color: aliceblue;
+    color: #1f1f1f;
+}
+
+.day_name {
+    background-color: aliceblue;
+    color: #1f1f1f;
+    border-radius: 5px;
+}
+
+.normal {
+    border: 1px solid aliceblue;
+}
+
+.normal:hover {
+    background-color: aliceblue;
+    color: #1f1f1f;
+}
+
+.today {
+    background-color: teal;
+    color: #1f1f1f;
+}
+
+.today:hover {
+    background-color: turquoise;
+    color: azure;
+}
+
+.weekend {
+    background-color: wheat;
+    color: #1f1f1f;
+}
+
+.weekend:hover {
+    background-color: antiquewhite;
+    color: tan;
 }

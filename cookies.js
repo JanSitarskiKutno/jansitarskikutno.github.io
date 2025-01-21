@@ -1,7 +1,7 @@
 var galTable = new Array(); 
 var galx = 0; 
 
-function cookie_create(name, value, days) { 
+function create_cookie(name, value, days) { 
     if (days) { 
         var date = new Date(); 
         date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); 
@@ -11,7 +11,7 @@ function cookie_create(name, value, days) {
     else var expires = ""; 
 
     document.cookie = name + "=" + value + expires + "; path=/"; 
-    document.getElementById("simplecookienotification_v01").style.display = "none"; 
+    document.getElementById("cookie").style.display = "none"; 
 } 
 
 function cookie_read(name) { 

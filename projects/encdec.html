@@ -8,7 +8,7 @@
 		<meta name="author" content="Jan Sitarski">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<title>JS - O Mnie</title>
+		<title>JS - Enkrypcja</title>
 
 		<link rel="stylesheet" href="../style.css">
 		<link rel="icon" href="../resources/favicon.png">
@@ -17,7 +17,27 @@
 	<body>
 		<div class="header">
 			<span class="bio">
-			</span>
+				Wpisz swój tekst
+			</span><br>
+			<input type="text" id="tekst_xor">
+
+			<br><br>
+
+			<span class="bio">
+				Wpisz swój klucz enkrypcji
+			</span><br>
+			<input type="number" max="12" min="1" value="1" id="key_xor">
+
+			<br><br>
+
+			<input type="button" value="Gotowe" onclick="xor_enc()">
+
+			<br><br>
+
+			<span class="bio">
+				Wynik
+			</span><br>
+			<input type="text" id="wynik">
 		</div>
 
 		<div class="links">
@@ -26,8 +46,8 @@
 
 		<div id="cookie">
 			<div style="padding:10px; margin-left:15px; margin-right:15px; font-size:14px; font-weight:normal;">
-				<span id="cookie_noti">Wykorzystujemy pliki cookies.</span><br><br>
-				<a id="okbutton" href="javascript:create_cookie('cookie', 1, 7);">Zgoda</a><div id="jwc_hr2" style="height: 10px; display: block;"></div>
+				<span id="cookie_noti">Strona wykorzystuje pliki cookies do prawidłowego działania</span><br><br>
+				<a id="okbutton" href="javascript:create_cookie('cookie', 1, 7);">Zgadzam się na ciasteczka</a><div id="jwc_hr2" style="height: 10px; display: block;"></div>
 			</div>
 		</div>
 

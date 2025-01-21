@@ -5,13 +5,13 @@ function skills(x)
     switch (x)
     {
         case 1:
-            a.innerHTML = "Uczę się od 2021r"
+            a.innerHTML = "Uczę się od 2021r";
             break;
         case 2:
-            a.innerHTML = "Uczę się od 2024r"
+            a.innerHTML = "Uczę się od 2024r";
             break;
         case 3:
-            a.innerHTML = "Uczę się od 2023r"
+            a.innerHTML = "Uczę się od 2023r";
             break;
     }
 }
@@ -23,10 +23,10 @@ function projects(x)
     switch (x)
     {
         case 1:
-            a.innerHTML = "<a href='../projects/encdec.html'>Enkrypcja Tekstu</a><a href='#'>Kalendarz</a>"
+            a.innerHTML = "<a href='../projects/encdec.html'>Enkrypcja</a><a href='../projects/kalendarz.html'>Kalendarz</a>";
             break;
         case 2:
-            a.innerHTML = "<a href='https://github.com/ogweird/password-manager' target='blank'>Menedżer Haseł</a><a href='https://github.com/ogweird/bing-bot' target='blank'>Bot Wyszukujący W Bing</a><a href='https://github.com/ogweird/math-lib' target='blank'>Biblioteka Matematyczna</a>"
+            a.innerHTML = "<a href='https://github.com/ogweird/password-manager' target='blank'>Menedżer Haseł</a><a href='https://github.com/ogweird/bing-bot' target='blank'>Bot Wyszukujący W Bing</a><a href='https://github.com/ogweird/math-lib' target='blank'>Biblioteka Matematyczna</a>";
             break;
     }
 }
@@ -56,8 +56,27 @@ function change_achievement(i)
 
     let navigation_items = ""
 
-    navigation_items += "<span onclick='change_achievement(" + previous + ")' style='margin: 10px;'><</span>";
-    navigation_items += "<span onclick='change_achievement(" + next + ")' style='margin: 10px;'>></span>";
+    navigation_items += "<span onclick='change_achievement(" + previous + ")' style='margin: 10px;'>Poprzedni</span>";
+    navigation_items += "<span onclick='change_achievement(" + next + ")' style='margin: 10px;'>Następny</span>";
 
     navigation.innerHTML = navigation_items;
+}
+
+function xor_enc()
+{
+    let a = document.getElementById('tekst_xor').value.split("");
+    let b = parseInt(document.getElementById('key_xor').value);
+
+    for (let i = 0; i < a.length; i++) 
+    { 
+        a[i] = (String.fromCharCode((a[i].charCodeAt(0)) ^ b)); 
+    } 
+
+    document.getElementById('wynik').value = a.join("");
+}
+
+function mail()
+{
+    navigator.clipboard.writeText("abc@abc.cc");
+    alert("Skopiowano adres e-mail do schowka");
 }
