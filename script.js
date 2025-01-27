@@ -56,8 +56,8 @@ function change_achievement(i)
 
     let navigation_items = ""
 
-    navigation_items += "<span onclick='change_achievement(" + previous + ")' style='margin: 10px;'>Poprzedni</span>";
-    navigation_items += "<span onclick='change_achievement(" + next + ")' style='margin: 10px;'>Następny</span>";
+    navigation_items += "<span onclick='change_achievement(" + previous + ")' style='margin: 10px; cursor: pointer;'>Poprzedni</span>";
+    navigation_items += "<span onclick='change_achievement(" + next + ")' style='margin: 10px; cursor: pointer;'>Następny</span>";
 
     navigation.innerHTML = navigation_items;
 }
