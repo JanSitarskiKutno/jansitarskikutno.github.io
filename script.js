@@ -77,6 +77,6 @@ function xor_enc()
 
 function mail()
 {
-    navigator.clipboard.writeText("abc@abc.cc");
+    navigator.clipboard.writeText("doeshotter@outlook.com");
     alert("Skopiowano adres e-mail do schowka");
 }
