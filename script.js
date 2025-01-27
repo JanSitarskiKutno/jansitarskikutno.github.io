@@ -26,7 +26,7 @@ function projects(x)
             a.innerHTML = "<a href='../projects/encdec.html'>Enkrypcja</a><a href='../projects/kalendarz.html'>Kalendarz</a>";
             break;
         case 2:
-            a.innerHTML = "<a href='https://github.com/ogweird/password-manager' target='blank'>Menedżer Haseł</a><a href='https://github.com/ogweird/bing-bot' target='blank'>Bot Wyszukujący W Bing</a><a href='https://github.com/ogweird/math-lib' target='blank'>Biblioteka Matematyczna</a>";
+            a.innerHTML = "<a href='https://github.com/ogweird/password-manager' target='blank'>Menedżer Haseł</a><a href='https://github.com/ogweird/bing-bot' target='blank'>Bot Wyszukujący W Bing</a>";
             break;
     }
 }
