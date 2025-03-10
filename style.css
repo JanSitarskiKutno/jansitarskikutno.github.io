@@ -213,3 +213,12 @@ table {
     background-color: antiquewhite;
     color: tan;
 }
+
+audio {
+    border: solid 2px var(--main-accent); 
+    border-radius: 50px;
+}
+
+audio::-webkit-media-controls-panel {
+    background-color: var(--main-accent);
+}

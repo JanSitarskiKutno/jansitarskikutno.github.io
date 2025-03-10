@@ -23,7 +23,7 @@ function projects(x)
     switch (x)
     {
         case 1:
-            a.innerHTML = "<a href='../projects/encdec.html'>Enkrypcja</a><a href='../projects/kalendarz.html'>Kalendarz</a>";
+            a.innerHTML = "<a href='../projects/encdec.html'>Enkrypcja</a><a href='../projects/kalendarz.html'>Kalendarz</a><a href='../projects/sounds.html'>Dźwięki</a>";
             break;
         case 2:
             a.innerHTML = "<a href='https://github.com/ogweird/password-manager' target='blank'>Menedżer Haseł</a><a href='https://github.com/ogweird/bing-bot' target='blank'>Bot Wyszukujący W Bing</a>";
